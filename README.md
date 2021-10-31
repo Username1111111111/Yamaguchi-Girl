@@ -1,7 +1,7 @@
 # Yamaguchi Girl <img src="https://img.shields.io/badge/Status-Complete-green" style="vertical-align: middle;">
-> 
-> [Live demo here](https://username1111111111.github.io/Yamaguchi-Girl/)
-> Or 👇:
+> Promo site with animated levitating girl, made with grid and gsap
+> <p><a href="https://username1111111111.github.io/Yamaguchi-Girl/">Live demo here</a></p>
+> <p>Or 👇:</p>
 </a>
 <a href="https://username1111111111.github.io/Yamaguchi-Girl/">
  <img src="./_resources/yamaguchi-girl.png">
