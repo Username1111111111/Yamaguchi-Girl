@@ -117,14 +117,17 @@ body {
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
+  margin: 0 auto;
 }
 
 .main .section__wrapper .image-block .image-block__image--bottom-hole {
   position: relative;
   left: 50%;
+  position: relative;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
+  margin: 0 auto;
   z-index: -1;
 }
 

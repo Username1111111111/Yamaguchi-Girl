@@ -110,13 +110,15 @@ body {
 					position: relative;
 					left: 50%;
 					transform: translateX(-50%);
-
+					margin: 0 auto;
 				}
 
 				.image-block__image--bottom-hole {
 					position: relative;
 					left: 50%;
+					position: relative;
 					transform: translateX(-50%);
+					margin: 0 auto;
 					z-index: -1;
 				}
 			}
