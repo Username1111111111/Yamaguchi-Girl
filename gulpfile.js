@@ -40,7 +40,9 @@ let { src, dest } = require('gulp'),
   clean_css = require('gulp-clean-css'),
   rename = require('gulp-rename'),
   imagemin = require('gulp-imagemin'),
-  uglify = require('gulp-uglify-es').default
+  uglify = require('gulp-uglify-es').default,
+  babel = require("gulp-babel"),
+  javascriptObfuscator = require('gulp-javascript-obfuscator')
 
 
   
@@ -74,8 +76,11 @@ let { src, dest } = require('gulp'),
 // npm i --save-dev gulp-rename                     Позволяет переименовать файл, чтобы было 2 копии CSS
 // npm i --save-dev gulp-uglify-es                  Минификация JS
 // npm i --save-dev gulp-imagemin@7.1.0             Сжатие картинок
+// npm i --save-dev gulp-babel @babel/core          Полифилы
+// npm i --save-dev @babel/preset-env               Пресеты
+// npm i --save-dev gulp-javascript-obfuscator      Обфускация божественная
 
-// npm i --save-dev gulp browser-sync gulp-file-include del gulp-sass sass gulp-autoprefixer gulp-group-css-media-queries gulp-clean-css gulp-rename gulp-uglify-es gulp-imagemin@7.1.0
+// npm i --save-dev gulp browser-sync gulp-file-include del gulp-sass sass gulp-autoprefixer gulp-group-css-media-queries gulp-clean-css gulp-rename gulp-uglify-es gulp-imagemin@7.1.0 gulp-babel @babel/core @babel/preset-env gulp-javascript-obfuscator
 
 
 function browserSync() {
@@ -121,7 +126,16 @@ function js() {
   return src(path.src.js)
     .pipe(fileinclude()) // Собрать файлы из частей
     .pipe(dest(path.build.js)) // Выгрузка целого без минификации
-    .pipe(uglify())
+    .pipe(babel({ presets: ["@babel/preset-env"] })) // Полифилы
+    .pipe(javascriptObfuscator({
+      // optionsPreset: 'low-obfuscation',
+      optionsPreset: 'medium-obfuscation',
+      // optionsPreset: 'high-obfuscation',
+      // debugProtection: true,
+      // debugProtectionInterval: true,
+      // disableConsoleOutput: true,
+    })) // Обфускация
+    .pipe(uglify()) // Минификация
     .pipe( rename({ 
       extname: '.min.js' 
     }))

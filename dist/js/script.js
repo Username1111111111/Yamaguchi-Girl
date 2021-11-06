@@ -19,7 +19,5 @@ window.addEventListener('DOMContentLoaded', () => {
     setTimeout( () => {
         girlAnimation.play();
     }, 2000);
-
+    
 });
-
-

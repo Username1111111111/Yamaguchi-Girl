@@ -19,6 +19,7 @@ body {
   background-image: url("../img/voice-bg.png");
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 .main .section__wrapper {
@@ -145,6 +146,10 @@ body {
 }
 
 @media screen and (max-width: 1680px) {
+  body {
+    overflow: visible;
+  }
+
   .main .section__wrapper {
     grid-template-areas: "description" "girl" "tablet" "command";
     grid-template-columns: 100%;

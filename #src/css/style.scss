@@ -20,7 +20,7 @@ body {
 	background-image: url('../img/voice-bg.png');
 	height: 100%;
 	width: 100%;
-	// overflow: hidden;
+	overflow: hidden;
 }
 
 .main {
@@ -141,6 +141,9 @@ body {
 
 
 @media screen and (max-width: 1680px) {
+	body {
+		overflow: visible;
+	}
 	.main {
 		.section {
 			&__wrapper {
